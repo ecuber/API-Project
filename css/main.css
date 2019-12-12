@@ -3,5 +3,64 @@ Stylesheet for the website
  */
 
 .background-header{
-
 }
+
+/*
+ positioning: there is probably a better way to center the searchbar
+  */
+.searchbar {
+    height: 50px;
+    width: 30%;
+    background-color: red;
+    position: absolute;
+    left: 35%;
+    top: 70%;
+}
+
+.fit-width{
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+}
+
+/*navbar*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.nav-text{
+    font-family: 'Press Start 2P';
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+

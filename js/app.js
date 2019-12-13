@@ -2,6 +2,7 @@
     NOTE: This file requires JQuery; please import it from whenever calling this script.
     Use this script tag:
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="../js/app.js"></script>
  */
 
 let currentPokemon;
@@ -47,19 +48,11 @@ function loadPokemon() {
             // console.log(obj);
             currentPokemon = obj;
             displayPokemon();
-            return;
         }
-        throw newError(pokemon);
+    }).fail(() => {
+        throw new Error(`Couldn't find Pokemon with name/id: "${pokemon}"`);
     });
-}
 
-/**
- * Throws an error given with the incorrect search query.
- * @param id - Search query
- * @returns {Error}
- */
-function newError(id) {
-    return new Error(`No Pokemon with name/ID ${id} found.`)
 }
 
 /**
@@ -68,5 +61,3 @@ function newError(id) {
 $(".searchButton").on("click", () => {
     loadPokemon();
 });
-
-// console.log(loadPokemon());

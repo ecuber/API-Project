@@ -11,10 +11,9 @@ Stylesheet for the website
 .searchbar {
     height: 50px;
     width: 30%;
-    background-color: red;
     position: absolute;
     left: 35%;
-    top: 70%;
+    top: 80%;
 }
 
 .fit-width{

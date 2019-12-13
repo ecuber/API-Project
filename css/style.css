@@ -1,9 +1,6 @@
 /*
  Stylesheet for the searchbar
  */
-body{
-    background: #262626;
-}
 
 .search {
     width: 100%;
@@ -35,7 +32,7 @@ body{
 }
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-    width: 30%;
+    width: 100%;
     position: absolute;
     top: 70%;
     left: 50%;

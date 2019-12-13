@@ -20,6 +20,9 @@
 .searchTerm:focus{
     color: black;
 }
+.searchlogo{
+    height: 24px;
+}
 .searchButton {
     width: 40px;
     height: 36px;

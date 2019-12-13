@@ -4,7 +4,9 @@ Stylesheet for the website
 
 .background-header{
 }
-
+body{
+    background-color: #fafcff;
+}
 /*
  positioning: there is probably a better way to center the searchbar
   */
@@ -22,6 +24,9 @@ Stylesheet for the website
     object-fit: cover;
 }
 
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 /*navbar*/
 
 ul {

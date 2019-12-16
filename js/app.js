@@ -26,9 +26,10 @@ function extract(attribute, arr) {
  */
 function displayPokemon() {
     console.log(currentPokemon);
+
     $('#pokemon-display').html('<h1 class ="pokemon-name">' +
         currentPokemon.name.charAt(0).toUpperCase() + currentPokemon.name.substring(1)
-        + '</h1>');
+        + '</h1>')
 
 }
 

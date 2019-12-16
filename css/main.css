@@ -75,7 +75,14 @@ li a:hover {
 
 .pokemon-name{
     color: #ef5350;
-    font-family: Helvetica;
+    font-family: nintendo;
+    font-size: 30px;
+    padding: 25px;
+}
+
+@font-face {
+    font-family:"nintendo";
+    src: url("../media/pokemon-nintendo.ttf") format("truetype");
 }
 
 .blink {

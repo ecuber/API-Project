@@ -73,6 +73,11 @@ li a:hover {
     font-size: 20px;
 }
 
+.pokemon-name{
+    color: #ef5350;
+    font-family: Helvetica;
+}
+
 .blink {
     animation: blinker 0.6s linear infinite;
 }

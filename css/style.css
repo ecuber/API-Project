@@ -41,3 +41,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@media only screen and (min-width: 720px) and (max-width: 1023px){
+
+}
+
+@media only screen and (max-width: 719px) {
+
+}

@@ -80,7 +80,10 @@ li a:hover {
     text-align: center;
 }
 
-
+.flexrow{
+    display: flex;
+    flex-direction: row;
+}
 
 @font-face {
     font-family:"nintendo";

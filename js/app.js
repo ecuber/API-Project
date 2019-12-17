@@ -27,10 +27,16 @@ function extract(attribute, arr) {
 function displayPokemon() {
     console.log(currentPokemon);
 
-    $('#pokemon-display').html('<h1 class ="pokemon-name">' +
-        currentPokemon.name.charAt(0).toUpperCase() + currentPokemon.name.substring(1)
-        + '</h1> ' +
-        '<img src="'+currentPokemon.sprites.front_default+'">');
+    $('#pokemon-display').html(
+        `<h1 class ="pokemon-name">${currentPokemon.name.charAt(0).toUpperCase()}${currentPokemon.name.substring(1)}</h1>
+        <div class="flexrow">
+            <img class="sprite" src="${currentPokemon.sprites.front_default}" height="300px">
+            <ul class="pokemon-stats">
+                <li class="pokemon-stats">Types: ${currentPokemon.types.join(", ")}</li>
+                <li>Abilities: ${currentPokemon.abilities.join(", ")}</li>
+            </ul>
+        </div>
+        `);
 
 }
 
@@ -67,3 +73,5 @@ function loadPokemon() {
 $(".searchButton").on("click", () => {
     loadPokemon();
 });
+
+

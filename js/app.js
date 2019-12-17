@@ -47,7 +47,7 @@ function loadPokemon() {
     if (!$errDiv.hasClass("invisble")) {
         $errDiv.addClass("invisible")
     }
-    const pokemon = $(".searchTerm").val().trim();
+    const pokemon = $(".searchTerm").val().trim().toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}/`;
     let obj;
     $.get(url, (data, status) => {

@@ -88,6 +88,12 @@ li a:hover {
     color: black;
     font-family: nintendo, sans-serif;
     text-decoration: black;
+    text-align: center;
+}
+
+#error {
+    color: #961319;
+    position: absolute;
 }
 
 .flexrow {
@@ -150,4 +156,5 @@ li a:hover {
 
 .invisible {
     display: none;
+    transition: 0.2s;
 }

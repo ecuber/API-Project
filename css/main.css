@@ -148,4 +148,6 @@ li a:hover {
     }
 }
 
-
+.invisible {
+    display: none;
+}

@@ -22,43 +22,68 @@ function extract(attribute, arr) {
 }
 
 /**
- * TODO: Actually make it display something.
+ * Displays the data about the pokemon from the currentPokemon object..
  */
 function displayPokemon() {
+<<<<<<< HEAD
     console.log(currentPokemon);
 
     $('#pokemon-title').html('<h1 class ="pokemon-name">' +
         currentPokemon.name.charAt(0).toUpperCase() + currentPokemon.name.substring(1)
         + '</h1> ' +
         '<img class="pixel-art" src="'+currentPokemon.sprites.front_default+'">');
+=======
+    // console.log(currentPokemon);
+    $('#pokemon-display').html(
+        `<h1 class ="pokemon-name">${currentPokemon.name.charAt(0).toUpperCase()}${currentPokemon.name.substring(1)}</h1>
+        <div class="flexrow">
+            <img class="sprite" src="${currentPokemon.sprites.front_default}" height="300px">
+            <ul class="pokemon-stats">
+                <li class="pokemon-stats">Types: ${currentPokemon.types.join(", ")}</li>
+                <li>Abilities: ${currentPokemon.abilities.join(", ")}</li>
+            </ul>
+        </div>
+        `);
+>>>>>>> 202f403d2822350215015d9bbffac7246da09486
 
 }
 
 /**
- * Returns an object with the attributes of the Pokemon entered in the search box.
+ * Makes a request to the PokeAPI with the pokemon from the search bar, and displays it.
  */
 function loadPokemon() {
-    const pokemon = $(".searchTerm").val().trim();
+    let $errDiv = $("#error");
+    if (!$errDiv.hasClass("invisble")) {
+        $errDiv.addClass("invisible")
+    }
+    const pokemon = $(".searchTerm").val().trim().toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}/`;
     let obj;
     $.get(url, (data, status) => {
-        // console.log(status);
         if (status === "success") {
-            // console.log(obj);
             obj = {
                 name: data.name,
                 types: extract("type", data.types),
                 abilities: extract("ability", data.abilities),
                 sprites: data.sprites
             };
-            // console.log(obj);
             currentPokemon = obj;
             displayPokemon();
         }
     }).fail(() => {
-        throw new Error(`Couldn't find Pokemon with name/id: "${pokemon}"`);
+        oopsies(pokemon);
     });
 
+}
+
+function toggleError() {
+    let div = $("#error");
+    div.hasClass("invisible") ? div.removeClass("invisible") : div.addClass("invisible");
+}
+
+function oopsies(pokemon) {
+    toggleError();
+    throw new Error(`Couldn't find Pokemon with name/id: "${pokemon}"`);
 }
 
 /**
@@ -67,3 +92,5 @@ function loadPokemon() {
 $(".searchButton").on("click", () => {
     loadPokemon();
 });
+
+

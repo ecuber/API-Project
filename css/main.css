@@ -2,11 +2,13 @@
 Stylesheet for the website
  */
 
-.background-header{
+.background-header {
 }
-body{
+
+body {
     background-color: #fafcff;
 }
+
 /*
  positioning: there is probably a better way to center the searchbar
   */
@@ -18,7 +20,7 @@ body{
     top: 45%;
 }
 
-.fit-width-cover{
+.fit-width-cover {
     width: 100%;
     height: 600px;
     object-fit: cover;
@@ -27,6 +29,7 @@ body{
 .shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 /*navbar*/
 
 ul {
@@ -60,26 +63,27 @@ li a:hover {
     background-color: #ef5350;
 }
 
-.nav-text{
-    font-family: 'Press Start 2P';
+.nav-text {
+    font-family: 'Press Start 2P', sans-serif;
     font-weight: normal;
     text-transform: uppercase;
     font-size: 30px;
 }
 
-.header1{
-    font-family: 'Press Start 2P';
+.header1 {
+    font-family: 'Press Start 2P', sans-serif;
     font-weight: normal;
     font-size: 20px;
 }
 
-.pokemon-name{
+.pokemon-name {
     color: #ef5350;
-    font-family: nintendo;
+    font-family: nintendo, sans-serif;
     font-size: 100px;
     text-align: center;
 }
 
+<<<<<<< HEAD
 .pixel-art{
     display: block;
     margin-left: auto;
@@ -88,33 +92,54 @@ li a:hover {
 
 
 .flexrow{
+=======
+.pokemon-stats {
+    background-color: transparent;
+    color: black;
+    font-family: nintendo, sans-serif;
+    text-decoration: black;
+    text-align: center;
+}
+
+#error {
+    color: #961319;
+    position: absolute;
+}
+
+.flexrow {
+>>>>>>> 202f403d2822350215015d9bbffac7246da09486
     display: flex;
     flex-direction: row;
 }
 
 @font-face {
-    font-family:"nintendo";
+    font-family: "nintendo";
     src: url("../media/pokemon-nintendo.ttf");
 }
 
 .blink {
     animation: blinker 0.6s linear infinite;
 }
-.header-group{
+
+.header-group {
     display: flex;
     flex-direction: row;
     padding: 15px;
 }
+
 @keyframes blinker {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
-@media only screen and (min-width: 720px) and (max-width: 1023px){
-    .fit-width-cover{
+@media only screen and (min-width: 720px) and (max-width: 1023px) {
+    .fit-width-cover {
         width: 100%;
         height: 550px;
         object-fit: cover;
     }
+
     .searchbar {
         height: 50px;
         width: 30%;
@@ -125,11 +150,12 @@ li a:hover {
 }
 
 @media only screen and (max-width: 719px) {
-    .fit-width-cover{
+    .fit-width-cover {
         width: 100%;
         height: 350px;
         object-fit: cover;
     }
+
     .searchbar {
         height: 50px;
         width: 30%;
@@ -139,4 +165,7 @@ li a:hover {
     }
 }
 
-
+.invisible {
+    display: none;
+    transition: 0.2s;
+}

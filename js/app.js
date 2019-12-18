@@ -33,12 +33,12 @@ function displayPokemon() {
         '<img class="pixel-art" src="' + currentPokemon.sprites.front_default + '">');
     // console.log(currentPokemon);
     $('#pokemon-display').html(
-        `<h1 class ="pokemon-name">${currentPokemon.name.charAt(0).toUpperCase()}${currentPokemon.name.substring(1)}</h1>
-        <div class="flexrow">
-            <img class="sprite" src="${currentPokemon.sprites.front_default}" height="300px">
+        `<div class="flexrow">
             <ul class="pokemon-stats">
                 <li class="pokemon-stats">Types: ${currentPokemon.types.join(", ")}</li>
                 <li class="pokemon-stats">Abilities: ${currentPokemon.abilities.join(", ")}</li>
+                <li>Abilities: ${currentPokemon.abilities.join(", ")}</li>
+                <li></li>
             </ul>
         </div>
         `);

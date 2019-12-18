@@ -33,7 +33,7 @@ body {
 
 /*navbar*/
 
-ul {
+.nav-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -44,11 +44,11 @@ ul {
     top: 0;
 }
 
-li {
+.nav-li {
     float: left;
 }
 
-li a {
+.nav-li .nav-a {
     display: block;
     color: white;
     text-align: center;
@@ -89,16 +89,22 @@ li a:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 100px;
+    width: 100px;
 }
 
 
 
-.pokemon-stats {
+.pokemon-stats{
+
     background-color: transparent;
-    color: black;
-    font-family: nintendo, sans-serif;
-    text-decoration: black;
-    text-align: center;
+    font-family: nintendo;
+    font-size: 30px;
+
+}
+
+ul{
+    display: block;
 }
 
 #error {

@@ -37,10 +37,14 @@ function displayPokemon() {
             <ul class="pokemon-stats">
                 <li class="pokemon-stats">Types: ${currentPokemon.types.join(", ")}</li>
                 <li>Abilities: ${currentPokemon.abilities.join(", ")}</li>
-                <li></li>
             </ul>
         </div>
         `);
+    $('#pokemon-sprites').append(`<img src="`+ currentPokemon.sprites[0] +`" alt="pokemon image"/>`);
+    for(let i = 0; i < currentPokemon.sprites.length; i++){
+        console.log("run: " + currentPokemon.sprites[i])
+        $('#pokemon-sprites').html(`<img src="`+ currentPokemon.sprites[i] +`" alt="pokemon image"/>`);
+    }
 }
 
 /**

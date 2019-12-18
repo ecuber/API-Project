@@ -83,7 +83,7 @@ li a:hover {
     text-align: center;
 }
 
-<<<<<<< HEAD
+
 .pixel-art{
     display: block;
     margin-left: auto;
@@ -91,8 +91,7 @@ li a:hover {
 }
 
 
-.flexrow{
-=======
+
 .pokemon-stats {
     background-color: transparent;
     color: black;
@@ -107,7 +106,7 @@ li a:hover {
 }
 
 .flexrow {
->>>>>>> 202f403d2822350215015d9bbffac7246da09486
+
     display: flex;
     flex-direction: row;
 }

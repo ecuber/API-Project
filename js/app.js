@@ -25,14 +25,12 @@ function extract(attribute, arr) {
  * Displays the data about the pokemon from the currentPokemon object..
  */
 function displayPokemon() {
-<<<<<<< HEAD
     console.log(currentPokemon);
 
     $('#pokemon-title').html('<h1 class ="pokemon-name">' +
         currentPokemon.name.charAt(0).toUpperCase() + currentPokemon.name.substring(1)
         + '</h1> ' +
         '<img class="pixel-art" src="'+currentPokemon.sprites.front_default+'">');
-=======
     // console.log(currentPokemon);
     $('#pokemon-display').html(
         `<h1 class ="pokemon-name">${currentPokemon.name.charAt(0).toUpperCase()}${currentPokemon.name.substring(1)}</h1>
@@ -44,8 +42,6 @@ function displayPokemon() {
             </ul>
         </div>
         `);
->>>>>>> 202f403d2822350215015d9bbffac7246da09486
-
 }
 
 /**

@@ -27,18 +27,16 @@ function extract(attribute, arr) {
 function displayPokemon() {
     console.log(currentPokemon);
 
-    $('#pokemon-title').html('<h1 class ="pokemon-name">' +
-        currentPokemon.name.charAt(0).toUpperCase() + currentPokemon.name.substring(1)
-        + '</h1> ' +
-        '<img class="pixel-art" src="' + currentPokemon.sprites.front_default + '">');
+    $('#pokemon-title').html(`
+        <h1 class ="pokemon-name">${currentPokemon.name.charAt(0).toUpperCase()}${currentPokemon.name.substring(1)}</h1>
+        <img class="pixel-art" src="${currentPokemon.sprites.front_default}" alt="${currentPokemon.name}">
+    `);
     // console.log(currentPokemon);
     $('#pokemon-display').html(
         `<div class="flexrow">
             <ul class="pokemon-stats">
                 <li class="pokemon-stats">Types: ${currentPokemon.types.join(", ")}</li>
                 <li class="pokemon-stats">Abilities: ${currentPokemon.abilities.join(", ")}</li>
-                <li>Abilities: ${currentPokemon.abilities.join(", ")}</li>
-                <li></li>
             </ul>
         </div>
         `);
@@ -94,6 +92,12 @@ function oopsies(pokemon) {
  */
 $(".searchButton").on("click", () => {
     loadPokemon();
+});
+
+$("#searchBox").on("keypress", e => {
+    if (e.key === "Enter") {
+        loadPokemon();
+    }
 });
 
 

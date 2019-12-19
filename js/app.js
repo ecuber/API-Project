@@ -37,9 +37,16 @@ function displayPokemon() {
             <ul class="pokemon-stats">
                 <li class="pokemon-stats">Types: ${currentPokemon.types.join(", ")}</li>
                 <li class="pokemon-stats">Abilities: ${currentPokemon.abilities.join(", ")}</li>
+                <li>Abilities: ${currentPokemon.abilities.join(", ")}</li>
             </ul>
         </div>
         `);
+    $('#pokemon-sprites').append(`<img class="pixel-art" src="`+ currentPokemon.sprites[0] +`" alt="pokemon image">`);
+    console.log(currentPokemon.sprites.length)
+    for(let i = 0; i < currentPokemon.sprites.length; i++){
+        console.log("runs: " + currentPokemon.sprites[i])
+        $('#pokemon-sprites').html(`<img src="`+ currentPokemon.sprites[i] +`" alt="pokemon image"/>`);
+    }
 }
 
 /**

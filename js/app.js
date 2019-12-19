@@ -21,6 +21,17 @@ function extract(attribute, arr) {
     return newList;
 }
 
+
+/**
+ * Ignore for now, will get a google image
+ * @param name
+ */
+function googleImage(name) {
+    // Google Custom Search API key: AIzaSyDbdYfNDtOdOw4CuFzqA4moubckMO10Kmc
+    // Limited to 100 queries/day
+  
+}
+
 /**
  * Displays the data about the pokemon from the currentPokemon object..
  */
@@ -32,21 +43,15 @@ function displayPokemon() {
         <img class="pixel-art" src="${currentPokemon.sprites.front_default}" alt="${currentPokemon.name}">
     `);
     // console.log(currentPokemon);
+    const hdImg = googleImage(currentPokemon.name);
     $('#pokemon-display').html(
         `<div class="flexrow">
             <ul class="pokemon-stats">
                 <li class="pokemon-stats">Types: ${currentPokemon.types.join(", ")}</li>
                 <li class="pokemon-stats">Abilities: ${currentPokemon.abilities.join(", ")}</li>
-                <li>Abilities: ${currentPokemon.abilities.join(", ")}</li>
             </ul>
         </div>
         `);
-    $('#pokemon-sprites').append(`<img class="pixel-art" src="`+ currentPokemon.sprites[0] +`" alt="pokemon image">`);
-    console.log(currentPokemon.sprites.length)
-    for(let i = 0; i < currentPokemon.sprites.length; i++){
-        console.log("runs: " + currentPokemon.sprites[i])
-        $('#pokemon-sprites').html(`<img src="`+ currentPokemon.sprites[i] +`" alt="pokemon image"/>`);
-    }
 }
 
 /**

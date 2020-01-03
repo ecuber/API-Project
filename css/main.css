@@ -95,6 +95,9 @@ li a:hover {
 }
 
 
+#stats {
+    justify-content: center;
+}
 
 .pokemon-stats{
 

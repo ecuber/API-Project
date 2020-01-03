@@ -11,7 +11,7 @@ let currentPokemon;
  * Extracts the type/ability names from an array in the original format from the JSON object.
  * @param attribute - "ability" or "type" to be extracted
  * @param arr - Original array
- * @returns {[]}
+ * @returns {[]} Target array element.
  */
 function extract(attribute, arr) {
     let newList = [];
@@ -21,19 +21,8 @@ function extract(attribute, arr) {
     return newList;
 }
 
-
 /**
- * Ignore for now, will get a google image
- * @param name
- */
-function googleImage(name) {
-    // Google Custom Search API key: AIzaSyDbdYfNDtOdOw4CuFzqA4moubckMO10Kmc
-    // Limited to 100 queries/day
-  
-}
-
-/**
- * Displays the data about the pokemon from the currentPokemon object..
+ * Displays the data about the pokemon from the currentPokemon object.
  */
 function displayPokemon() {
     console.log(currentPokemon);
@@ -43,9 +32,8 @@ function displayPokemon() {
         <img class="pixel-art" src="${currentPokemon.sprites.front_default}" alt="${currentPokemon.name}">
     `);
     // console.log(currentPokemon);
-    const hdImg = googleImage(currentPokemon.name);
     $('#pokemon-display').html(
-        `<div class="flexrow">
+        `<div id="stats" class="flexrow">
             <ul class="pokemon-stats">
                 <li class="pokemon-stats">Types: ${currentPokemon.types.join(", ")}</li>
                 <li class="pokemon-stats">Abilities: ${currentPokemon.abilities.join(", ")}</li>
@@ -66,6 +54,7 @@ function loadPokemon() {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}/`;
     let obj;
     $.get(url, (data, status) => {
+        
         if (status === "success") {
             obj = {
                 name: data.name,
@@ -80,7 +69,6 @@ function loadPokemon() {
                 behavior: "smooth",
                 block: "start",
                 inline: "nearest"
-
             });
         }
     }).fail(() => {
@@ -89,11 +77,18 @@ function loadPokemon() {
 
 }
 
+/**
+ * Toggles the visibility of the error message div.
+ */
 function toggleError() {
     let div = $("#error");
     div.hasClass("invisible") ? div.removeClass("invisible") : div.addClass("invisible");
 }
 
+/**
+ * Throws an error message to the console and toggles the error div.
+ * @param {string} pokemon 
+ */
 function oopsies(pokemon) {
     toggleError();
     throw new Error(`Couldn't find Pokemon with name/id: "${pokemon}"`);
@@ -111,5 +106,3 @@ $("#searchBox").on("keypress", e => {
         loadPokemon();
     }
 });
-
-
